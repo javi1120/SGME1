@@ -242,5 +242,14 @@ export class InventarioService {
     {headers}
     ) 
   }
+  generarpdf(id_articulo:any){
+    
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this.httpclient.post(this.url + 'generarpdf',
+    {
+      "id_articulo": id_articulo
+    },
+    {headers}) 
 
+  }
 }
